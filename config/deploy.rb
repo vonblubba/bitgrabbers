@@ -24,7 +24,7 @@ set :puma_init_active_record, false  # Change to true if using ActiveRecord
 
 ## Defaults:
 # set :scm,           :git
-# set :branch,        :master
+set :branch,        :develop
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
