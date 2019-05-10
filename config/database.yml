@@ -16,3 +16,10 @@ test:
   username:
   password:
   host: localhost
+
+production:
+  <<: *default
+  database: bitgrabbers
+  username: pi
+  password: sh1r0w76!
+  host: localhost
