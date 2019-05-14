@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_144917) do
+ActiveRecord::Schema.define(version: 2019_05_14_102844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2019_05_10_144917) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.text "description", null: false
+    t.string "name", null: false
+    t.integer "year"
+    t.integer "order", default: 10, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_games_on_name", unique: true
+    t.index ["year"], name: "index_games_on_year", unique: true
   end
 
   create_table "users", force: :cascade do |t|
