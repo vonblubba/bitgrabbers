@@ -17,13 +17,14 @@ ActiveAdmin.register Screenshot do
 
   form(:html => { :multipart => true }) do |f|
     f.inputs do
-      f.input :game_id
+      user_collection = User.all.map { |user| ["#{user.email}", user.id ]}
+      f.input :game
       f.input :title
       f.input :description
       f.input :publication_date
       f.input :published
       f.input :image, :as => :file
-      f.input :user_id
+      f.input :user_id, as: :select, collection: user_collection
     end
     f.actions
   end
