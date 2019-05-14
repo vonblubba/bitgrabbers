@@ -18,4 +18,7 @@ class Screenshot < ApplicationRecord
   validates :publication_date, presence: true
 
   belongs_to :game
+  belongs_to :user
+
+  mount_uploader :image, ScreenshotUploader
 end
