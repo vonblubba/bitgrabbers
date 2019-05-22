@@ -21,4 +21,6 @@ class Screenshot < ApplicationRecord
   belongs_to :user
 
   mount_uploader :image, ScreenshotUploader
+
+  acts_as_taggable
 end

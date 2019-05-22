@@ -1,5 +1,5 @@
 ActiveAdmin.register Screenshot do
-  permit_params :description, :title, :publication_date, :published, :game_id, :image, :user_id
+  permit_params :description, :title, :publication_date, :published, :game_id, :image, :user_id, :tag_list
 
   index do
     selectable_column
@@ -21,6 +21,7 @@ ActiveAdmin.register Screenshot do
       f.input :game
       f.input :title
       f.input :description
+      f.input :tag_list
       f.input :publication_date
       f.input :published
       f.input :image, :as => :file
