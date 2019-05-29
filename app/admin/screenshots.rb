@@ -4,6 +4,9 @@ ActiveAdmin.register Screenshot do
   index do
     selectable_column
     id_column
+    column "Thumb" do |thumb|
+      image_tag thumb.image.thumb.url
+    end
     column :title
     column :publication_date
     toggle_bool_column :published

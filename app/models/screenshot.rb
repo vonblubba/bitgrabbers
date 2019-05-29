@@ -23,4 +23,8 @@ class Screenshot < ApplicationRecord
   mount_uploader :image, ScreenshotUploader
 
   acts_as_taggable
+
+  def thumb
+    image.thumb.url
+  end
 end
