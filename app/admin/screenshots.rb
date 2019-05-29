@@ -6,7 +6,7 @@ ActiveAdmin.register Screenshot do
     id_column
     column :title
     column :publication_date
-    column :published
+    toggle_bool_column :published
     column :game
     actions
   end
@@ -21,8 +21,8 @@ ActiveAdmin.register Screenshot do
       f.input :game
       f.input :title
       f.input :description
-      f.input :tag_list
-      f.input :publication_date
+      f.input :tag_list, as: :tags, collection: ActsAsTaggableOn::Tag.all, display_name: :name
+      f.input :publication_date, as: :date_time_picker
       f.input :published
       f.input :image, :as => :file
       f.input :user_id, as: :select, collection: user_collection

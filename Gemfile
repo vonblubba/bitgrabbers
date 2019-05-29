@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 gem 'activeadmin'
+gem 'activeadmin_addons'
 gem 'carrierwave', '~> 1.0'
 gem 'acts-as-taggable-on', '~> 6.0'
 
