@@ -21,7 +21,7 @@ ActiveAdmin.register Screenshot do
       f.input :game
       f.input :title
       f.input :description
-      f.input :tag_list, as: :tags, collection: ActsAsTaggableOn::Tag.all, display_name: :name
+      f.input :tag_list, as: :tags, collection: ActsAsTaggableOn::Tag.all.pluck(:name)
       f.input :publication_date, as: :date_time_picker
       f.input :published
       f.input :image, :as => :file
