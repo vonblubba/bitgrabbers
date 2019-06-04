@@ -10,5 +10,6 @@ class ScreenshotsController < ApplicationController
   end
 
   def show
+    @screenshot = Screenshot.friendly.find(params[:id])
   end
 end
