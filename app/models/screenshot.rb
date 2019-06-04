@@ -26,6 +26,8 @@ class Screenshot < ApplicationRecord
 
   acts_as_taggable
 
+  scope :published,   -> { where(published: true).where('created_at <= ?', DateTime.now) }
+
   def thumb
     image.thumb.url
   end

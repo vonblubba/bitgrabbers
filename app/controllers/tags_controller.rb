@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 
   def initialize
     @games = Game.showcase
-    @tags = ['science fiction', 'fantasy']
+    @tags = ActsAsTaggableOn::Tag.showcase
     super
   end
 

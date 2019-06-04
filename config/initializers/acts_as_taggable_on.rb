@@ -3,6 +3,6 @@ ActsAsTaggableOn::Tag.class_eval do
   friendly_id :name, use: [:slugged, :finders]
 
   def self.showcase
-    ActsAsTaggableOn::Tag.order(:created_at).limit(10)
+    ActsAsTaggableOn::Tag.order(taggings_count: :desc).limit(10)
   end
 end
