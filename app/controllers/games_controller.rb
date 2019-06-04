@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class GamesController < ApplicationController
 
   def initialize
     @games = Game.showcase
@@ -9,10 +9,6 @@ class PagesController < ApplicationController
   def index
   end
 
-  def about
-  end
-
-  def submit
-
+  def show
   end
 end

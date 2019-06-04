@@ -14,6 +14,8 @@
 #
 
 class Screenshot < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   validates :title, presence: true
   validates :publication_date, presence: true
 

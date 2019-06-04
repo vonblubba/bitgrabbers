@@ -6,14 +6,14 @@
         <title>Bitgrabbers</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="robots" content="index, follow"/>
-        <meta name="keywords" content=""/>
-        <meta name="description" content=""/>
+        <meta name="keywords" content="videogames screenshots"/>
+        <meta name="description" content="Videogame screenshots taken by videogames lovers. Because we strongly believe that videogames CAN be a form of art."/>
         <!--=============== css  ===============-->
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <!--=============== scripts  ===============-->
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         <!--=============== favicons ===============-->
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <%= favicon_link_tag asset_path('favicon.ico') %>
     </head>
     <body>
         <!--loader-->
@@ -29,7 +29,7 @@
             <!-- header start  -->
             <header class="main-header">
                 <!-- logo   -->
-                <a href="index.html" class="logo-holder"><%= image_tag("images/logo.png") %></a>
+                <a href="index.html" class="logo-holder"><%= image_tag("logo.png") %></a>
                 <!-- logo end  -->
                 <!-- search -->
                 <div class="search-button"><i class="far fa-search"></i></div>
@@ -47,51 +47,33 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">Home </a>
+                                <%= link_to "Home ", root_path %>
+                            </li>
+                            <li>
+                                <a href="#">Games </a>
                                 <!--second level -->
                                 <ul>
-                                    <li><a href="index.html">Carousel</a></li>
-                                    <li><a href="index2.html">Slider Details</a></li>
-                                    <li><a href="index3.html">Multi Slideshow</a></li>
-                                    <li><a href="index4.html">Slideshow</a></li>
-                                    <li><a href="index5.html">Image</a></li>
-                                    <li><a href="index6.html">Slider Classic</a></li>
-                                    <li><a href="index7.html">Video</a></li>
+                                    <% @games.each do |game| %>
+                                        <li><%= link_to game.name, game_path(game) %></li>
+                                    <% end %>
                                 </ul>
                                 <!--second level end-->
                             </li>
                             <li>
-                                <a href="#" class="act-link">Portfolio </a>
+                                <a href="#" class="act-link">Tags </a>
                                 <!--second level -->
                                 <ul>
-                                    <li><a href="portfolio.html">Horizontal 2 Columns</a></li>
-                                    <li><a href="portfolio2.html">Horizontal 3 Columns</a></li>
-                                    <li><a href="portfolio3.html">Horizontal 1 Columns</a></li>
-                                    <li><a href="portfolio4.html">Masonry</a></li>
-                                    <li><a href="portfolio5.html">Masonry 2</a></li>
-                                    <li><a href="portfolio6.html">Column Grid</a></li>
-                                    <li>
-                                        <a href="#">Single </a>
-                                        <!--third  level -->
-                                        <ul>
-                                            <li><a href="portfolio-single.html">Carousel</a></li>
-                                            <li><a href="portfolio-single2.html">Fullscreen Slider </a></li>
-                                            <li><a href="portfolio-single3.html">Column Grid</a></li>
-                                            <li><a href="portfolio-single4.html">Column Fullwidth</a></li>
-                                        </ul>
-                                        <!--third level end-->
-                                    </li>
+                                    <% @tags.each do |tag| %>
+                                        <li><%= link_to tag, tag_path(tag) %></li>
+                                    <% end %>
                                 </ul>
                                 <!--second level end-->
                             </li>
                             <li>
-                                <a href="about.html">About</a>
+                                <%= link_to "About", about_path %>
                             </li>
                             <li>
-                                <a href="blog.html">News</a>
-                            </li>
-                            <li>
-                                <a href="contacts.html">Contacts</a>
+                                <%= link_to "Submit your shots", submit_path %>
                             </li>
                         </ul>
                     </nav>
