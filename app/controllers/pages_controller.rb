@@ -12,6 +12,8 @@ class PagesController < ApplicationController
 
   def about
     @page_title = 'About us'
+    @screenshots_count = Screenshot.published.count
+    @games_count = Game.all.count
   end
 
   def submit
