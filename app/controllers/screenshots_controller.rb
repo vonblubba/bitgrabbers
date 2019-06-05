@@ -6,9 +6,6 @@ class ScreenshotsController < ApplicationController
     super
   end
 
-  def index
-  end
-
   def show
     @screenshot = Screenshot.friendly.find(params[:id])
   end

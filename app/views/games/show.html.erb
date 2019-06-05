@@ -1,0 +1,44 @@
+                <!-- content -->
+                <div class="content">
+                    <!--bottom-filter-wrap-->
+                    <div class="bottom-filter-wrap hor-filter-wrap">
+                        <div class="scroll-down-wrap">
+                            <div class="mousey">
+                                <div class="scroller"></div>
+                            </div>
+                            <span>Scroll down to discover</span>
+                        </div>
+                        <div class="filter-title">Filters <i class="fal fa-long-arrow-right"></i></div>
+                        <div class="gallery-filters">
+                            <a href="#" class="gallery-filter  gallery-filter-active" data-filter="*">All resolutions</a>
+                            <a href="#" class="gallery-filter" data-filter=".standard">Standard</a>
+                            <a href="#" class="gallery-filter" data-filter=".ultra-wide">Ultra-wide</a>
+                        </div>
+                        <div class="count-folio round-counter">
+                            <div class="num-album"></div>
+                            <div class="all-album"></div>
+                        </div>
+                    </div>
+                    <!--bottom-filter-wrap end-->
+                    <div class="ff_panel-conainer fl-wrap">
+                        <!-- portfolio start -->
+                        <div class="gallery-items big-padding   four-column fl-wrap vis-thumb-info lightgallery">
+                            <% @screenshots.each do |screenshot| %>
+                            <!-- gallery-item-->
+                            <div class="gallery-item nature">
+                                <div class="grid-item-holder hov_zoom">
+                                    <%= image_tag(screenshot.image_url, alt: screenshot.title) %>
+                                    <a href="<%= screenshot.image_url %>" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                                    <div class="thumb-info">
+                                        <h3><a href="portfolio-single.html"><%= screenshot.title %></a></h3>
+                                        <p><%= screenshot.description %></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- gallery-item end-->
+                            <% end %>
+                        </div>
+                        <!-- portfolio end -->
+                    </div>
+                </div>
+                <!--content end-->

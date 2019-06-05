@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   root :to => "pages#index"
 
   resources :games, only: [:index, :show] do
-    resources :screenshots, only: [:index, :show]
+    resources :screenshots, only: [:show]
   end
 
-  resources :tags
+  resources :tags, only: [:show]
 end

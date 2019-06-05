@@ -10,5 +10,6 @@ class GamesController < ApplicationController
   end
 
   def show
+    @screenshots = Game.friendly.find(params[:id]).screenshots.published.order("created_at DESC")
   end
 end

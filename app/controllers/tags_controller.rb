@@ -6,9 +6,7 @@ class TagsController < ApplicationController
     super
   end
 
-  def index
-  end
-
   def show
+    @screenshots = Screenshot.published.tagged_with(params[:id]).order("screenshots.created_at DESC")
   end
 end
