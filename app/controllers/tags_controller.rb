@@ -8,5 +8,6 @@ class TagsController < ApplicationController
 
   def show
     @screenshots = Screenshot.published.tagged_with(params[:id]).order("screenshots.created_at DESC")
+    @page_title = "#{params[:id].capitalize} screenshots"
   end
 end

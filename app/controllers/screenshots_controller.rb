@@ -8,5 +8,6 @@ class ScreenshotsController < ApplicationController
 
   def show
     @screenshot = Screenshot.friendly.find(params[:id])
+    @page_title = @screenshot.title
   end
 end

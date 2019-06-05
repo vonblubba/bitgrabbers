@@ -11,9 +11,10 @@ class PagesController < ApplicationController
   end
 
   def about
+    @page_title = 'About us'
   end
 
   def submit
-
+    @page_title = 'Submit your shots'
   end
 end
