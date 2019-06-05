@@ -18,9 +18,9 @@
                         <!--follow-wrap end-->
                         <!--hero-decor-let-->
                         <div class="hero-decor-let">
-                            <div>01. <span>Wedding</span></div>
-                            <div>02. <span>Commercial</span></div>
-                            <div>03. <span>Branding</span></div>
+                            <% @screenshot.tag_list.each_with_index do |tag, index| %>
+                                <div><%= (index + 1) %>. <span><%= tag %></span></div>
+                            <% end %>
                         </div>
                         <!--hero-decor-let end-->
                         <!--home-main_title-->
