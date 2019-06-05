@@ -42,7 +42,7 @@ gem 'activeadmin_addons'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'font-awesome-sass', '~> 5.8.1'
+#gem "font-awesome-rails"
 gem 'friendly_id', '~> 5.2.4'
 
 group :development, :test do
