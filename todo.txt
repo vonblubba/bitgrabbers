@@ -1,3 +1,2 @@
 TODO
 - edit screenshot --> split tags
-- gestire immagini troppo grandi --> thumb low res?
