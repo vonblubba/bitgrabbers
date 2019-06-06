@@ -11,6 +11,8 @@
 #  publication_date :datetime
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  image            :string
+#  slug             :string
 #
 
 FactoryBot.define do
