@@ -8,7 +8,7 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
 
-    if @submission.save
+    if verify_recaptcha(model: @submission) && @submission.save
       flash[:success] = "Your shot is on its way."
       redirect_to controller: 'pages', action: 'submit'
     else

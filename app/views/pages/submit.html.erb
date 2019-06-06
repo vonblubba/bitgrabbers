@@ -38,6 +38,7 @@
                                                     <%= form.text_field :email, placeholder: "Email Address *" %>
                                                     <%= form.text_field :game, placeholder: "What game is your shot from?" %>
                                                     <%= form.file_field :image, :class => 'btn float-btn flat-btn color-bg' %>
+                                                    <%= recaptcha_tags :theme => 'dark', :size => '100%' %>
                                                     <br>
                                                     <%= form.submit "Send", :class => 'btn float-btn flat-btn color-bg', placeholder: "Pick your shot *" %>
                                                 </fieldset>
