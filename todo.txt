@@ -1,6 +1,3 @@
 TODO
-
-- uploads folder is reset at each deploy!
-- switch name and title in shw screenshot
 - edit screenshot --> split tags
-- selected navbar item
+- gestire immagini troppo grandi --> thumb low res?

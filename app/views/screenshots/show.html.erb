@@ -26,8 +26,8 @@
                         <!--home-main_title-->
                         <div class="home-main_title">
                             <div class="home-main_title_item">
-                                <h4><%= @screenshot.title %></h4>
-                                <h2><%= @screenshot.game.name %></h2>
+                                <h4><%= @screenshot.game %></h4>
+                                <h2><%= @screenshot.title.name %></h2>
                                 <p><%= @screenshot.description %> </p>
                                 <%= link_to 'Download', @screenshot.image_url, download: "Screenshot_#{File.basename(@screenshot.image.path)}_image", class: "btn fl-btn" %>
                             </div>

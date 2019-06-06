@@ -49,10 +49,10 @@
                     <nav>
                         <ul>
                             <li>
-                                <%= link_to "Home ", root_path %>
+                                <%= link_to "Home ", root_path, class: active_for(controller: "pages", action: "index") %>
                             </li>
                             <li>
-                                <a href="#">Games </a>
+                                <a href="#" class="<%= active_for(controller: "games") %>" onclick="return false;">Games </a>
                                 <!--second level -->
                                 <ul>
                                     <% @games.each do |game| %>
@@ -62,7 +62,7 @@
                                 <!--second level end-->
                             </li>
                             <li>
-                                <a href="#" class="act-link">Tags </a>
+                                <a href="#" class="<%= active_for(controller: "tags") %>" onclick="return false;">Tags </a>
                                 <!--second level -->
                                 <ul>
                                     <% @tags.each do |tag| %>
@@ -72,10 +72,10 @@
                                 <!--second level end-->
                             </li>
                             <li>
-                                <%= link_to "About", about_path %>
+                                <%= link_to "About", about_path, class: active_for(controller: "pages", action: "about") %>
                             </li>
                             <li>
-                                <%= link_to "Submit your shots", submit_path %>
+                                <%= link_to "Submit your shots", submit_path, class: active_for(controller: "pages", action: "submit") %>
                             </li>
                         </ul>
                     </nav>
