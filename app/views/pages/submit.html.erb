@@ -1,8 +1,5 @@
                 <!-- content -->
                 <div class="content">
-                    <% flash.each do |key, value| %>
-                        <div class="alert alert-<%= key %>"><%= value %></div>
-                     <% end %>
                     <!-- column-image  -->
                     <div class="column-image">
                         <div class="bg"  data-bg="images/bg/1.jpg"></div>
@@ -36,7 +33,7 @@
                                     <div class="column-wrapper_text fl-wrap">
                                         <div id="contact-form" class="fl-wrap">
                                             <div id="message"></div>
-                                            <%= form_with model: @submission, :url => {:controller => 'submissions', :action => 'create'}, class: "custom-form" do |form| %>
+                                            <%= form_with model: @submission, :url => {:controller => 'submissions', :action => 'create'}, class: "custom-form", local: true do |form| %>
                                                 <fieldset>
                                                     <%= form.text_field :email, placeholder: "Email Address *" %>
                                                     <%= form.text_field :game, placeholder: "What game is your shot from?" %>
@@ -44,6 +41,11 @@
                                                     <br>
                                                     <%= form.submit "Send", :class => 'btn float-btn flat-btn color-bg', placeholder: "Pick your shot *" %>
                                                 </fieldset>
+                                            <% end %>
+                                            <% flash.each do |key, value| %>
+                                                <div>
+                                                    <span style="color:orange"><%= value %></span>
+                                                </div>
                                             <% end %>
                                         </div>
                                     </div>
