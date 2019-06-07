@@ -29,13 +29,13 @@
                                 <h4><%= @screenshot.game.name %></h4>
                                 <h2><%= @screenshot.title %></h2>
                                 <p><%= @screenshot.description %> </p>
-                                <%= link_to 'Download', @screenshot.image_url, download: "Screenshot_#{File.basename(@screenshot.image.path)}_image", class: "btn fl-btn" %>
+                                <%= link_to 'Download high resolution screenshot', @screenshot.image_url, download: "Screenshot_#{File.basename(@screenshot.image.path)}_image", class: "btn fl-btn" %>
                             </div>
                         </div>
                         <!--home-main_title end-->
                         <div class="slider-mask"></div>
                         <!--bg image-->
-                        <div class="bg" data-bg="<%= @screenshot.image_url %>"></div>
+                        <div class="bg" data-bg="<%= @screenshot.image.low_quality.url %>"></div>
                         <div class="overlay"></div>
                         <!--bg image end-->
                     </div>

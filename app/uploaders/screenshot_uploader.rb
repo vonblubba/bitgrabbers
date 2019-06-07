@@ -31,10 +31,17 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   version :thumb do
     process resize_to_fit: [80, 50]
+    process :quality => 60
   end
 
   version :big_thumb do
     process resize_to_fit: [nil, 350]
+    process :quality => 60
+  end
+
+  version :low_quality do
+    process resize_to_fit: [1200, nil]
+    process :quality => 60
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
