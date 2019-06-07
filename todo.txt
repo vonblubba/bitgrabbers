@@ -1,3 +1,5 @@
 TODO
 - edit screenshot --> split tags
 - shot submission
+- sitemap: https://github.com/kjvarga/sitemap_generator#rails.
+- fix robots.txt
