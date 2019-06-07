@@ -35,4 +35,8 @@ SitemapGenerator::Sitemap.create do
   Game.find_each do |game|
     add game_path(game), :lastmod => game.updated_at
   end
+
+  ActsAsTaggableOn::Tag.find_each do |tag|
+    add tag_path(tag), :lastmod => Time.now
+  end
 end
