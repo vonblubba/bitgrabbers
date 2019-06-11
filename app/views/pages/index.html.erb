@@ -12,7 +12,7 @@
                         <div class="gallery-filters">
                             <a href="#" class="gallery-filter  gallery-filter-active" data-filter="*">All resolutions</a>
                             <a href="#" class="gallery-filter" data-filter=".standard">Standard</a>
-                            <a href="#" class="gallery-filter" data-filter=".ultra-wide">Ultra-wide</a>
+                            <a href="#" class="gallery-filter" data-filter=".ultra_wide">Ultra-wide</a>
                         </div>
                         <div class="count-folio round-counter">
                             <div class="num-album"></div>
@@ -25,10 +25,10 @@
                         <div class="gallery-items min-pad   four-column fl-wrap lightgallery">
                             <% @screenshots.each do |screenshot| %>
                             <!-- gallery-item-->
-                            <div class="gallery-item nature">
+                            <div class="gallery-item <%= screenshot.aspect_ratio %>">
                                 <div class="grid-item-holder hov_zoom">
                                     <%= image_tag(screenshot.image.big_thumb.url, alt: screenshot.title) %>
-                                    <a href="<%= screenshot.image_url %>" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                                    <a href="<%= screenshot.image_url %>" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
                                     <div class="thumb-info">
                                         <h3><%= link_to screenshot.title, game_screenshot_path(game_id: screenshot.game, id: screenshot) %></h3>
                                         <p><%= screenshot.description %></p>

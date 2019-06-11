@@ -28,9 +28,22 @@ class Screenshot < ApplicationRecord
 
   acts_as_taggable
 
+  enum aspect_ratio: {
+         standard:  10,
+         ultra_wide: 15
+       }
+
   scope :published,   -> { where(published: true).where('screenshots.created_at <= ?', DateTime.now) }
+
+  before_save :update_aspect_ratio
 
   def thumb
     image.thumb.url
+  end
+
+  def update_aspect_ratio
+    img = MiniMagick::Image.open(Rails.root.join(image.path).to_s)
+    ratio = img.width.to_f / img.height.to_f
+    self.aspect_ratio = ratio > 1.8 ? :ultra_wide : :standard
   end
 end

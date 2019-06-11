@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_085123) do
+ActiveRecord::Schema.define(version: 2019_06_11_142538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,10 +63,9 @@ ActiveRecord::Schema.define(version: 2019_06_06_085123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.string "slug"
+    t.integer "aspect_ratio", default: 10
     t.index ["game_id"], name: "index_screenshots_on_game_id"
     t.index ["publication_date"], name: "index_screenshots_on_publication_date"
-    t.index ["slug"], name: "index_screenshots_on_slug", unique: true
   end
 
   create_table "submissions", force: :cascade do |t|
