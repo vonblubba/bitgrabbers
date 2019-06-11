@@ -35,7 +35,9 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   end
 
   version :big_thumb do
-    process resize_to_fit: [nil, 350]
+    # resize and crop to 400x265
+    process resize_to_fit: [nil, 265]
+    process center_crop: ['400']
     process :quality => 60
   end
 
@@ -60,5 +62,20 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   def secure_token
     var = :"@#{mounted_as}_secure_token"
     model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
+
+  def center_crop(width)
+    manipulate! do |img|
+      semi_extra = ((get_dimensions[0] - width.to_i) / 2).round
+      img.shave("#{semi_extra}x0")
+      img
+    end
+  end
+
+  def get_dimensions
+    if file && model
+      img = MiniMagick::Image.open(file.file)
+      [img.width, img.height]
+    end
   end
 end
