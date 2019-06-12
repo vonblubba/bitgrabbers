@@ -16,4 +16,4 @@
 //= require js/map
 //= require js/plugins
 //= require js/scripts
-//= require pagination.coffee
+//= require pagination
