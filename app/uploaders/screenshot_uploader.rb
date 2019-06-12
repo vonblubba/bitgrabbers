@@ -38,12 +38,12 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
     # resize and crop to 400x265
     process resize_to_fit: [nil, 265]
     process center_crop: ['400']
-    process :quality => 60
+    process :quality => 65
   end
 
   version :low_quality do
     process resize_to_fit: [1200, nil]
-    process :quality => 60
+    process :quality => 85
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
