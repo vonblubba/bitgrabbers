@@ -1,8 +1,11 @@
-server 'figura4.no-ip.biz', port: 2269, roles: [:web, :app, :db], primary: true
+#server 'figura4.no-ip.biz', port: 2269, roles: [:web, :app, :db], primary: true
+
+set :stages, %w(production staging)
+set :default_stage, "staging"
 
 set :repo_url,        'git@github.com:vonblubba/bitgrabbers.git'
 set :application,     'bitgrabbers'
-set :user,            'pi'
+#set :user,            'pi'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -11,23 +14,28 @@ set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
-set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+#set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+#set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, false  # Change to true if using ActiveRecord
 
 ## Defaults:
 # set :scm,           :git
-set :branch,        :develop # normally should be master
+# set :branch,         # normally should be master
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
+
+# set :ssh_options, {
+#   forward_agent: true,
+#   #keys: ["~/.ssh/bsl_deployer_rsa"]
+# }
 
 ## Linked Files & Directories (Default None):
 set :linked_files, %w{config/database.yml config/master.key}
