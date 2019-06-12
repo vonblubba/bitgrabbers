@@ -22,21 +22,11 @@
                     <!--bottom-filter-wrap end-->
                     <div class="ff_panel-conainer fl-wrap">
                         <!-- portfolio start -->
-                        <div class="gallery-items min-pad   four-column fl-wrap lightgallery">
-                            <% @screenshots.each do |screenshot| %>
-                            <!-- gallery-item-->
-                            <div class="gallery-item <%= screenshot.aspect_ratio %>">
-                                <div class="grid-item-holder hov_zoom">
-                                    <%= image_tag(screenshot.image.big_thumb.url, alt: screenshot.title) %>
-                                    <a href="<%= screenshot.image_url %>" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
-                                    <div class="thumb-info">
-                                        <h3><%= link_to screenshot.title, game_screenshot_path(game_id: screenshot.game, id: screenshot) %></h3>
-                                        <p><%= screenshot.description %></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- gallery-item end-->
-                            <% end %>
+                        <div id="screenshots_portfolio" class="gallery-items min-pad   four-column fl-wrap lightgallery">
+                            <%= render @screenshots %>
+                        </div>
+                        <div id="infinite-scrolling">
+                          <%= will_paginate @screenshots %>
                         </div>
                         <!-- portfolio end -->
                     </div>
