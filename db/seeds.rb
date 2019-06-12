@@ -18,7 +18,7 @@ end
 10.times do |i|
   Game.create(
     description: Faker::ChuckNorris.fact,
-    name: Faker::Restaurant.name,
+    name: Faker::Book.unique.title,
     year: 2018,
     order: i
   )
@@ -37,10 +37,11 @@ ActsAsTaggableOn::Tag.create(
 )
 
 50.times do |i|
+  offset = rand(Game.count)
   s = Screenshot.create(
-    title: "screenshot #{i}",
+    title: Faker::Book.unique.title,
     description: BetterLorem.p(1, true, false),
-    game_id: Game.first.id,
+    game_id: Game.offset(offset).first.id,
     published: true,
     publication_date: Time.now,
     user_id: User.first.id,
