@@ -1,8 +1,8 @@
-server 'figura4.no-ip.biz', user: "pi", port: 2269, roles: [:web, :app, :db], primary: true
-set :branch, :develop
-set :rails_env, "staging"
-set :user, 'pi'
 set :stage, :staging
+server 'figura4.no-ip.biz', user: "pi", port: 2269, roles: [:web, :app, :db], primary: true
+set :rails_env, :staging
+set :branch, :develop
+set :user, 'pi'
 
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
