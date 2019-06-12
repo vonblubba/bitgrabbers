@@ -24,8 +24,20 @@ end
   )
 end
 
+ActsAsTaggableOn::Tag.create(
+  name: "sci-fi"
+)
+
+ActsAsTaggableOn::Tag.create(
+  name: "fantasy"
+)
+
+ActsAsTaggableOn::Tag.create(
+  name: "pixel art"
+)
+
 50.times do |i|
-  Screenshot.create(
+  s = Screenshot.create(
     title: "screenshot #{i}",
     description: BetterLorem.p(1, true, false),
     game_id: Game.first.id,
@@ -34,4 +46,11 @@ end
     user_id: User.first.id,
     image: File.open(Rails.root + "app/assets/images/bg/bg_about.jpg")
   )
+  if i.even?
+    s.tag_list = "sci-fi, fantasy"
+    s.save
+  else
+    s.tag_list = "pixel art"
+    s.save
+  end
 end

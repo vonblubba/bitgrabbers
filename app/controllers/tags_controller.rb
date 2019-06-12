@@ -7,7 +7,8 @@ class TagsController < ApplicationController
   end
 
   def show
-    @screenshots = Screenshot.published.tagged_with(params[:id]).order("screenshots.created_at DESC")
-    @page_title = "#{params[:id].capitalize} screenshots"
+    @tag = ActsAsTaggableOn::Tag.friendly.find(params[:id])
+    @screenshots = Screenshot.published.tagged_with(@tag.name).order("screenshots.created_at DESC")
+    @page_title = "#{@tag.name.capitalize} screenshots"
   end
 end
