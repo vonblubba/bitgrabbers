@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :screenshots, only: [:show]
   end
 
+  resources :screenshots, only: [:index]
+
   resources :tags, only: [:show]
   resources :submissions, only: [:create]
 end
