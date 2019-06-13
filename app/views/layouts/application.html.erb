@@ -43,10 +43,12 @@
                 <a href="<%= root_path %>" class="logo-holder"><%= image_tag("logo.png") %></a>
                 <!-- logo end  -->
                 <!-- search -->
-                <!--
-                <div class="search-button"><i class="far fa-search"></i></div>
-                <div class="search-input"><input name="se" id="se" type="text" class="search" placeholder="Search.." /></div>
-                -->
+                <%= search_form_for @q, url: search_path do |f| %>
+                    <div class="search-button"><%= f.label :title_or_game_name_cont %></div>
+                    <div class="search-input"><%= f.search_field :title_or_game_name_cont, class: "search", placeholder: "Search.." %></div>
+                    <!-- <div class="search-button"><i class="far fa-search"></i></div>
+                    <div class="search-input"><input name="se" id="se" type="text" class="search" placeholder="Search.." /></div> -->
+                <% end %>
                 <!-- search end  -->
                 <div class="sb-button"></div>
                 <div class="share-btn showshare"><i class="fal fa-megaphone"></i><span>Share</span></div>

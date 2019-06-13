@@ -408,6 +408,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.3)
+  ransack
   rb-readline
   recaptcha
   rspec (~> 3.0)

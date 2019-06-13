@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def initialize
     @games = Game.showcase
     @tags = ActsAsTaggableOn::Tag.showcase
+    @q = Screenshot.ransack("")
     super
   end
 
@@ -19,4 +20,11 @@ class PagesController < ApplicationController
   def submit
     @page_title = 'Submit your shots'
   end
+
+  def search
+    @q = Screenshot.ransack(params[:q])
+    @screenshots = @q.result(distinct: true)
+  end
+
+  private
 end
