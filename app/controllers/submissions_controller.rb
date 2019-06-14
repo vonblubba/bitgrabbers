@@ -1,10 +1,4 @@
 class SubmissionsController < ApplicationController
-  def initialize
-    @games = Game.showcase
-    @tags = ActsAsTaggableOn::Tag.showcase
-    super
-  end
-
   def create
     @submission = Submission.new(submission_params)
 

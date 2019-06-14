@@ -1,11 +1,4 @@
 class GamesController < ApplicationController
-
-  def initialize
-    @games = Game.showcase
-    @tags = ActsAsTaggableOn::Tag.showcase
-    super
-  end
-
   def index
   end
 
