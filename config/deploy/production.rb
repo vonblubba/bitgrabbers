@@ -1,8 +1,10 @@
 set :stage, :production
-server 'figura4.no-ip.biz', user: "pi", port: 2269, roles: [:web, :app, :db], primary: true
+server '165.22.28.25', user: "vonblubba", roles: [:web, :app, :db], primary: true
 set :rails_env, :production
 set :branch, :master
-set :user, 'pi'
+set :user, 'vonblubba'
+set :rvm_type, :system
+set :rvm_custom_path, '/usr/share/rvm'
 
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
