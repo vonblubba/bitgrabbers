@@ -2,4 +2,4 @@
 
 User-agent: *
 Disallow: /admin/
-Sitemap: https://www.bitgrabbers.com/sitemap.xml.gz
+Sitemap: https://bitgrabbers.com/sitemap.xml.gz

@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://bitgrabbers.com"
+SitemapGenerator::Sitemap.default_host = Rails.configuration.global_settings['base_url']
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
