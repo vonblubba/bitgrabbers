@@ -81,13 +81,15 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   end
 
   def watermark
-    second_image = MiniMagick::Image.open("#{Rails.root.join('app', 'assets', 'images', 'watermark.png')}")
-    manipulate! do |img|
-      result = img.composite(second_image) do |c|
-        c.compose "Over"    # OverCompositeOp
-        c.gravity "Southeast"
+    if self.version_name.nil?
+      second_image = MiniMagick::Image.open("#{Rails.root.join('app', 'assets', 'images', 'watermark.png')}")
+      manipulate! do |img|
+        result = img.composite(second_image) do |c|
+          c.compose "Over"    # OverCompositeOp
+          c.gravity "Southeast"
+        end
+        result
       end
-      result
     end
   end
 end
