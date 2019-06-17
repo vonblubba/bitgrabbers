@@ -46,4 +46,26 @@ class Screenshot < ApplicationRecord
     ratio = img.width.to_f / img.height.to_f
     self.aspect_ratio = ratio > 1.8 ? :ultra_wide : :standard
   end
+
+  def json_ld
+    {
+      "@context": "http://schema.org",
+      "@type": "ImageObject",
+      "author": "vonblubba",
+      "contentUrl": [Rails.configuration.global_settings['base_url'], image.url].join,
+      "datePublished": created_at.strftime("%FT%T"),
+      "description": description,
+      "name": title,
+      "thumbnail": [Rails.configuration.global_settings['base_url'], image.big_thumb.url].join,
+      "isBasedOn": {
+        "@context": "http://schema.org",
+        "@type": "VideoGame",
+        "name": self.game.name,
+        "url": "#{Rails.configuration.global_settings['base_url']}/games/#{self.game.slug}",
+        "description": self.game.description,
+        "operatingSystem": "Windows",
+        "applicationCategory": "Game"
+      }
+    }
+  end
 end

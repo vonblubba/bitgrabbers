@@ -1,0 +1,8 @@
+development:
+  base_url: http://localhost:3030
+
+staging:
+  base_url: http://staging.bitgrabbers.com
+
+production:
+  base_url: https://bitgrabbers.com

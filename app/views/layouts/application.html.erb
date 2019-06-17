@@ -25,6 +25,11 @@
 
           gtag('config', 'UA-XXXXXXXX-X');
         </script>
+        <% if @screenshot %>
+        <script type="application/ld+json">
+            <%= @screenshot.json_ld %>
+        </script>
+        <% end %>
     </head>
     <body>
         <!--loader-->

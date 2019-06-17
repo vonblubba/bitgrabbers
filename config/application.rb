@@ -17,5 +17,7 @@ module Bitgrabbers
     # the framework and any gems in your application.
 
     config.web_console.whitelisted_ips = '192.168.0.2'
+
+    config.global_settings = config_for(:global_settings)
   end
 end
