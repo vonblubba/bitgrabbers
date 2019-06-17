@@ -40,7 +40,7 @@
             <!-- header start  -->
             <header class="main-header">
                 <!-- logo   -->
-                <a href="<%= root_path %>" class="logo-holder"><%= image_tag("logo.png") %></a>
+                <a href="<%= root_path %>" class="logo-holder"><%= image_tag("logo.png", alt: "bitgrabbers logo") %> title="bitgrabbers"</a>
                 <!-- logo end  -->
                 <!-- search -->
                 <%= search_form_for @q, url: search_path do |f| %>
@@ -60,33 +60,33 @@
                     <nav>
                         <ul>
                             <li>
-                                <%= link_to "Home ", root_path, class: active_for(controller: "pages", action: "index") %>
+                                <%= link_to "Home ", root_path, title: "Bitgrabbers home", class: active_for(controller: "pages", action: "index") %>
                             </li>
                             <li>
-                                <a href="#" class="<%= active_for(controller: "games") %>" onclick="return false;">Games </a>
+                                <a href="#" class="<%= active_for(controller: "games") %>" title="Games" onclick="return false;">Games </a>
                                 <!--second level -->
                                 <ul>
                                     <% @games.each do |game| %>
-                                        <li><%= link_to game.name, game_path(game) %></li>
+                                        <li><%= link_to game.name, game_path(game), title: game.name %></li>
                                     <% end %>
                                 </ul>
                                 <!--second level end-->
                             </li>
                             <li>
-                                <a href="#" class="<%= active_for(controller: "tags") %>" onclick="return false;">Tags </a>
+                                <a href="#" class="<%= active_for(controller: "tags") %>" title="<%= tag.name %>" onclick="return false;">Tags </a>
                                 <!--second level -->
                                 <ul>
                                     <% @tags.each do |tag| %>
-                                        <li><%= link_to tag, tag_path(tag) %></li>
+                                        <li><%= link_to tag, tag_path(tag), title: tag.name %></li>
                                     <% end %>
                                 </ul>
                                 <!--second level end-->
                             </li>
                             <li>
-                                <%= link_to "About", about_path, class: active_for(controller: "pages", action: "about") %>
+                                <%= link_to "About", about_path, title: "About", class: active_for(controller: "pages", action: "about") %>
                             </li>
                             <li>
-                                <%= link_to "Submit your shots", submit_path, class: active_for(controller: "pages", action: "submit") %>
+                                <%= link_to "Submit your shots", submit_path, title: "Submit your shots", class: active_for(controller: "pages", action: "submit") %>
                             </li>
                         </ul>
                     </nav>
@@ -113,9 +113,9 @@
                     <div class="sb-widget    fl-wrap">
                         <div class="sidebar-social fl-wrap">
                             <ul>
-                                <li><a href="https://www.facebook.com/bitgrabbers/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/bitgrabbers/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://twitter.com/bitgrabbers" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/bitgrabbers/" title="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/bitgrabbers/" title="instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://twitter.com/bitgrabbers" title="twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
                             </ul>
                         </div>
                     </div>

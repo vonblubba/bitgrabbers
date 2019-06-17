@@ -9,10 +9,9 @@
                             </div>
                             <div class="clearfix"></div>
                             <ul>
-                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                <li><a href="#" target="_blank" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></li>
                             </ul>
                         </div>
                         <!--follow-wrap end-->
@@ -29,7 +28,7 @@
                                 <h4><%= @screenshot.game.name %></h4>
                                 <h2><%= @screenshot.title %></h2>
                                 <p><%= @screenshot.description %> </p>
-                                <%= link_to 'Download high resolution screenshot', @screenshot.image_url, download: "bitgrabbers_#{@screenshot.game.name}_#{SecureRandom.uuid}#{File.extname(@screenshot.image.path)}", class: "btn fl-btn" %>
+                                <%= link_to 'Download high resolution screenshot', @screenshot.image_url, download: "bitgrabbers_#{@screenshot.game.name}_#{SecureRandom.uuid}#{File.extname(@screenshot.image.path)}", class: "btn fl-btn", title: "Download high resolution screenshot" %>
                             </div>
                         </div>
                         <!--home-main_title end-->
