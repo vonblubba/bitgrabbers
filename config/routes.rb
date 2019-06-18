@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   get 'submit', to: 'pages#submit', as: 'submit'
   get 'search', to: 'pages#search', as: 'search'
+  get 'robots', to: 'pages#robots', as: 'robots'
 
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

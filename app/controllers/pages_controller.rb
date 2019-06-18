@@ -18,5 +18,9 @@ class PagesController < ApplicationController
     @screenshots = @q.result(distinct: true)
   end
 
+  def robots
+    render file: Rails.root.join("config/robots.#{Rails.env}.txt"), :layout => false, :content_type => "text/plain"
+  end
+
   private
 end
