@@ -27,7 +27,7 @@
         </script>
         <% if @screenshot %>
         <script type="application/ld+json">
-            <%= @screenshot.json_ld %>
+            <%= raw @screenshot.json_ld %>
         </script>
         <% end %>
     </head>
@@ -45,7 +45,7 @@
             <!-- header start  -->
             <header class="main-header">
                 <!-- logo   -->
-                <a href="<%= root_path %>" class="logo-holder"><%= image_tag("logo.png", alt: "bitgrabbers logo") %> title="bitgrabbers"</a>
+                <a href="<%= root_path %>" class="logo-holder" title="bitgrabbers logo"><%= image_tag("logo.png", alt: "bitgrabbers logo") %></a>
                 <!-- logo end  -->
                 <!-- search -->
                 <%= search_form_for @q, url: search_path do |f| %>
