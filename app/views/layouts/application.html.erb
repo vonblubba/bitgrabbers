@@ -72,7 +72,7 @@
                                 <a href="#" class="<%= active_for(controller: "games") %>" title="Games" onclick="return false;">Games </a>
                                 <!--second level -->
                                 <ul>
-                                    <% @games.each do |game| %>
+                                    <% @games_items.each do |game| %>
                                         <li><%= link_to game.name, game_path(game), title: game.name %></li>
                                     <% end %>
                                 </ul>
