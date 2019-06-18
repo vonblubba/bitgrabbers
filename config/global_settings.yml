@@ -1,8 +1,11 @@
 development:
   base_url: http://localhost:3030
+  google_tracking_id: UA-fake-1
 
 staging:
   base_url: http://staging.bitgrabbers.com
+  google_tracking_id: UA-fake-1
 
 production:
   base_url: https://bitgrabbers.com
+  google_tracking_id: UA-37502423-1

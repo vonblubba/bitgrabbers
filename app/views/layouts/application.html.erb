@@ -16,15 +16,16 @@
         <%= favicon_link_tag asset_path('favicon.ico') %>
         <%= csrf_meta_tags %>
         <!--=============== Google Analytics ===============-->
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=,<%= Rails.application.credentials.google_analitycs[:tracking_id] %>"></script>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.configuration.global_settings['google_tracking_id'] %>"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'UA-XXXXXXXX-X');
+          gtag('config', '<%= Rails.configuration.global_settings['google_tracking_id'] %>');
         </script>
+        <!--=============== JSON LD ===============-->
         <% if @screenshot %>
         <script type="application/ld+json">
             <%= raw @screenshot.json_ld %>
