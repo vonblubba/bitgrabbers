@@ -18,7 +18,7 @@
          return this.pushStack(c);
      };
      $("<div class='sb-button_point fl-wrap'></div>").duplicate(3).appendTo(".sb-button");
-     //   scroll nav------------------	 
+     //   scroll nav------------------
      $(".scroll-init  ul ").singlePageNav({
          filter: ":not(.external)",
          updateHash: false,
@@ -69,7 +69,7 @@
          fadeSpeed: 500,
          pauseSpeed: 3500
      });
-     //   sliders ------------------		
+     //   sliders ------------------
      if ($(".multi-slideshow_1").length > 0) {
          var ms1 = new Swiper(".multi-slideshow_1 .swiper-container", {
              preloadImages: false,
@@ -143,9 +143,9 @@
      };
     function setUpCarouselSlider() {
         $('.fw-carousel .swiper-wrapper').addClass('no-horizontal-slider');
-     if ($(".fw-carousel").length > 0) {      
+     if ($(".fw-carousel").length > 0) {
             if ($(window).width() >= 640 && j2 == undefined)
-            {                
+            {
          var totalSlides2 = $(".fw-carousel .swiper-slide").length;
          var mouseContr = $(".fw-carousel").data("mousecontrol");
          var j2 = new Swiper(".fw-carousel .swiper-container", {
@@ -537,7 +537,7 @@
              },
          });
      }
-     //   Isotope------------------		
+     //   Isotope------------------
      function inithorizontalPortfolio() {
          if ($("#portfolio_horizontal_container").length) {
              var d = $("#portfolio_horizontal_container");
@@ -699,7 +699,7 @@
      });
      // Share   ------------------
      $(".share-container").share({
-         networks: ['facebook', 'pinterest', 'googleplus', 'twitter', 'linkedin']
+         networks: ['facebook', 'pinterest', 'twitter']
      });
      var shrcn = $(".share-container"),
          swra = $(".share-wrapper"),
@@ -951,7 +951,7 @@
          inithorizontalPortfolio();
          mobMenuInit();
 		  	setUpCarouselSlider();
-     });		
+     });
      $("#menu").menu();
      var mouse = {
          x: 0,
@@ -1136,7 +1136,7 @@
      if (trueMobile) $(".bgvid , .background-vimeo , .background-youtube-wrapper").remove();
  }
 
- //   instagram ------------------	
+ //   instagram ------------------
  var actoket = $('#insta-content').data("instatoken");
  var token = actoket,
      num_photos = 6;
