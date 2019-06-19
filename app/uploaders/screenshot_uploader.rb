@@ -23,13 +23,17 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-  process :watermark
+
   #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
+  version :original do
+    process :watermark
+  end
+
   version :thumb do
     process resize_to_fit: [80, 50]
     process :quality => 60
@@ -81,15 +85,13 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
   end
 
   def watermark
-    if self.version_name.nil?
-      second_image = MiniMagick::Image.open("#{Rails.root.join('app', 'assets', 'images', 'watermark.png')}")
-      manipulate! do |img|
-        result = img.composite(second_image) do |c|
-          c.compose "Over"    # OverCompositeOp
-          c.gravity "Southeast"
-        end
-        result
+    second_image = MiniMagick::Image.open("#{Rails.root.join('app', 'assets', 'images', 'watermark.png')}")
+    manipulate! do |img|
+      result = img.composite(second_image) do |c|
+        c.compose "Over"    # OverCompositeOp
+        c.gravity "Southeast"
       end
+      result
     end
   end
 end

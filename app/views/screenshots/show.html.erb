@@ -28,7 +28,7 @@
                                 <h4><%= @screenshot.game.name %></h4>
                                 <h2><%= @screenshot.title %></h2>
                                 <p><%= @screenshot.description %> </p>
-                                <%= link_to 'Download high resolution screenshot', @screenshot.image_url, download: "bitgrabbers_#{@screenshot.game.name}_#{SecureRandom.uuid}#{File.extname(@screenshot.image.path)}", class: "btn fl-btn", title: "Download high resolution screenshot" %>
+                                <%= link_to 'Download high resolution screenshot', @screenshot.image.original.url, download: "bitgrabbers_#{@screenshot.game.name}_#{SecureRandom.uuid}#{File.extname(@screenshot.image.path)}", class: "btn fl-btn", title: "Download high resolution screenshot" %>
                             </div>
                         </div>
                         <!--home-main_title end-->

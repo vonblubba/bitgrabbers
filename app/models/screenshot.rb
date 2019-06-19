@@ -52,7 +52,7 @@ class Screenshot < ApplicationRecord
       "@context": "http://schema.org",
       "@type": "ImageObject",
       "author": "vonblubba",
-      "contentUrl": [Rails.configuration.global_settings['base_url'], image.url].join,
+      "contentUrl": [Rails.configuration.global_settings['base_url'], image.original.url].join,
       "datePublished": created_at.strftime("%FT%T"),
       "description": description,
       "name": title,

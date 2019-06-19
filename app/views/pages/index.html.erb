@@ -10,7 +10,7 @@
                                     <!-- swiper-slide-->
                                     <div class="swiper-slide hov_zoom <%= screenshot == @screenshots.last ? 'swiper-link-wrap' : '' %> ">
                                         <%= image_tag(screenshot.image.low_quality.url, alt: screenshot.title) %>
-                                        <a href="<%= screenshot.image_url %>" class="box-media-zoom   popup-image" title="slideshow"><i class="fal fa-search"></i></a>
+                                        <a href="<%= screenshot.image.original.url %>" class="box-media-zoom   popup-image" title="slideshow"><i class="fal fa-search"></i></a>
                                         <div class="thumb-info">
                                             <h3><%= link_to screenshot.title, game_screenshot_path(game_id: screenshot.game, id: screenshot), title: screenshot.title %></h3>
                                             <p><%= screenshot.game.name %></p>
