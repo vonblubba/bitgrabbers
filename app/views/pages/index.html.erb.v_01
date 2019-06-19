@@ -1,0 +1,147 @@
+                <!--content -->
+                <div class="content full-height">
+                    <!--home-main_container-->
+                    <div class="home-main_container">
+                        <!--follow-wrap-->
+                        <div class="follow-wrap">
+                            <div class="follow-wrap_title">
+                                <span>Follow</span> <i class="fal fa-long-arrow-right"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                            <ul>
+                                <li><a href="#" target="_blank" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <!--follow-wrap end-->
+                        <!--home-main_title-->
+                        <div class="home-main_title">
+                            <div class="home-main_title_item">
+                                <h4>Grabbing bits of Videogame art</h4>
+                                <h2>Bitgrabbers</h2>
+                                <p>The best gaming moments, screenshotted for you. </p>
+                                <%= link_to "More screenshots", screenshots_path, title: "More screenshots",class: "btn fl-btn" %>
+                            </div>
+                        </div>
+                        <div class="slide-progress-wrap"><div class="slide-progress"></div></div>
+                        <!--home-main_title end-->
+                        <div class="slider-mask"></div>
+                        <!--multi-slideshow-wrap_1 -->
+                        <div class="multi-slideshow-wrap_1 ms-wrap">
+                            <div class="full-height fl-wrap">
+                                <!--ms-container-->
+                                <div class="multi-slideshow_1 ms-container fl-wrap full-height">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item fl-wrap">
+                                                    <div class="bg" data-bg="<%= @screenshots[0].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                            <!--ms_item-->
+                                            <div class="swiper-slide ">
+                                                <div class="ms_item fl-wrap kenburns ">
+                                                    <div class="bg" data-bg="<%= @screenshots[1].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item fl-wrap">
+                                                    <div class="bg" data-bg="<%= @screenshots[2].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--ms-container end-->
+                            </div>
+                        </div>
+                        <!--multi-slideshow-wrap_1 end-->
+                        <!--multi-slideshow-wrap_2-->
+                        <div class="multi-slideshow-wrap_2">
+                            <div class="full-height fl-wrap">
+                                <!--ms-container-->
+                                <div class="multi-slideshow_2 ms-container fl-wrap full-height">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item2 fl-wrap">
+                                                    <div class="bg" data-bg="<%= @screenshots[3].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item2 fl-wrap">
+                                                    <div class="bg" data-bg="<%= @screenshots[4].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item2 fl-wrap kenburns ">
+                                                    <div class="bg" data-bg="<%= @screenshots[5].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--ms-container end-->
+                            </div>
+                        </div>
+                        <!--multi-slideshow-wrap_2 end-->
+                        <!--multi-slideshow-wrap_3-->
+                        <div class="multi-slideshow-wrap_3">
+                            <div class="full-height fl-wrap">
+                                <!--ms-container-->
+                                <div class="multi-slideshow_3 ms-container fl-wrap full-height">
+                                    <div class="swiper-container" dir="rtl">
+                                        <div class="swiper-wrapper">
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item3 fl-wrap kenburns">
+                                                    <div class="bg" data-bg="<%= @screenshots[6].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item3 fl-wrap">
+                                                    <div class="bg" data-bg="<%= @screenshots[7].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                            <!--ms_item-->
+                                            <div class="swiper-slide">
+                                                <div class="ms_item3 fl-wrap">
+                                                    <div class="bg" data-bg="<%= @screenshots[8].image.low_quality.url %>"></div>
+                                                    <div class="overlay"></div>
+                                                </div>
+                                            </div>
+                                            <!--ms_item end-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--ms-container end-->
+                            </div>
+                        </div>
+                        <!--multi-slideshow-wrap_3 end-->
+                    </div>
+                    <!--home-main_container end-->
+                </div>
+                <!--content end-->
