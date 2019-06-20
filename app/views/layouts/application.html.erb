@@ -82,7 +82,7 @@
                                 <a href="#" class="<%= active_for(controller: "tags") %>" title="<%= tag.name %>" onclick="return false;">Tags </a>
                                 <!--second level -->
                                 <ul>
-                                    <% @tags.each do |tag| %>
+                                    <% @tags_items.each do |tag| %>
                                         <li><%= link_to tag, tag_path(tag), title: tag.name %></li>
                                     <% end %>
                                 </ul>
