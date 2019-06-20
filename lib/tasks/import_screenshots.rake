@@ -130,7 +130,7 @@ namespace :import do
     end
 
     Game.find_by_name("Bioshock Infinite").screenshots.each do |screenshot|
-      screenshot.tag_list.add("fanatsy", "PC")
+      screenshot.tag_list.add("fantasy", "PC")
       screenshot.save
     end
   end
