@@ -21,6 +21,6 @@ class Game < ApplicationRecord
   has_many :screenshots
 
   def self.showcase
-    Game.order(:order).limit(10)
+    Game.order(:order, :name).limit(10)
   end
 end
