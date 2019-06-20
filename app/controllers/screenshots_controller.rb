@@ -1,10 +1,7 @@
 class ScreenshotsController < ApplicationController
   def index
-    @screenshots = Screenshot.order(publication_date: :desc).paginate(page: params[:page], per_page: 12)
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    @screenshots = Screenshot.order(publication_date: :desc)
+    #@screenshots = Screenshot.order(publication_date: :desc).paginate(page: params[:page], per_page: 12)
   end
 
   def show

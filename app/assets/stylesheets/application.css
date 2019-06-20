@@ -17,3 +17,10 @@
  *= require css/style
  *= require css/style-dark
  */
+
+h1 {
+  color:#fff;
+  font-size: 200% !important;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
