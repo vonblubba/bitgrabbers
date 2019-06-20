@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @screenshots = Screenshot.order(publication_date: :desc).limit(7)
+    @screenshots = Screenshot.published.order(publication_date: :desc).limit(7)
   end
 
   def about
