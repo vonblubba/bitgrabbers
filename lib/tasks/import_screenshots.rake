@@ -49,4 +49,89 @@ namespace :import do
       end
     end
   end
+
+  # run with:
+  # rake import:tags[true]
+  desc "Apply tags to some predefined games"
+  task :tags, [:dry_run] => :environment do |t, args|
+    Game.find_by_name("Bayonetta").screenshots.each do |screenshot|
+      screenshot.tag_list.add("sexy", "fantasy", "stylish", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Superbrothers: Sword & Sworcery").screenshots.each do |screenshot|
+      screenshot.tag_list.add("pixel art", "fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("EVE Online").screenshots.each do |screenshot|
+      screenshot.tag_list.add("space", "sci-fi", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("The Witcher 2").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("The Witcher 3: Wild Hunt").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Total War: Warhammer").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Dear Esther").screenshots.each do |screenshot|
+      screenshot.tag_list.add("landscapes")
+      screenshot.save
+    end
+
+    Game.find_by_name("Deus Ex: Human Revolution").screenshots.each do |screenshot|
+      screenshot.tag_list.add("sci-fi", "cyberpunk", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Dishonored").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Dishonored 2").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Dishonored, the kinfe of Dunwall").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Tomb Raider").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Rise of the Tomb Raider").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fantasy", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("The Walking Dead").screenshots.each do |screenshot|
+      screenshot.tag_list.add("horror", "zombies", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Deadlight").screenshots.each do |screenshot|
+      screenshot.tag_list.add("horror", "zombies", "PC")
+      screenshot.save
+    end
+
+    Game.find_by_name("Bioshock Infinite").screenshots.each do |screenshot|
+      screenshot.tag_list.add("fanatsy", "PC")
+      screenshot.save
+    end
+  end
 end
