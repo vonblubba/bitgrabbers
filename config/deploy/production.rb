@@ -70,3 +70,5 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+  after  :finishing,    'sitemap:refresh'
