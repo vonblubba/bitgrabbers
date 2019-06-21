@@ -18,7 +18,6 @@ ActiveAdmin.register Game do
     f.inputs do
       f.input :name
       f.input :year
-      f.input :order
       f.input :description
       f.input :in_menu
     end
