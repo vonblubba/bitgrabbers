@@ -16,7 +16,7 @@ namespace :import do
         game.description = row[20]
         game.name = row[21]
         game.year = row[22].to_i
-        game.order = 200
+        game.in_menu = false
         next unless game.save
         puts "* Game '#{game.name}' created."
       end
