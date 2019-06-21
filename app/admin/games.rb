@@ -1,17 +1,18 @@
 ActiveAdmin.register Game do
-  permit_params :name, :description, :order, :year
+  permit_params :name, :description, :in_menu, :year
 
   index do
     selectable_column
     id_column
     column :name
     column :year
-    column :order
+    toggle_bool_column :in_menu
     actions
   end
 
   filter :name
   filter :year
+  filter :in_menu
 
   form do |f|
     f.inputs do
@@ -19,6 +20,7 @@ ActiveAdmin.register Game do
       f.input :year
       f.input :order
       f.input :description
+      f.input :in_menu
     end
     f.actions
   end
