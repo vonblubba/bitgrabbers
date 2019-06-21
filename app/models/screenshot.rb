@@ -33,7 +33,7 @@ class Screenshot < ApplicationRecord
          ultra_wide: 15
        }
 
-  scope :published,   -> { where(published: true).where('screenshots.created_at <= ?', DateTime.now) }
+  scope :published,   -> { where(published: true).where('screenshots.publication_date <= ?', DateTime.now) }
 
   before_save :update_aspect_ratio
 
