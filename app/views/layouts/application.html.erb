@@ -3,7 +3,7 @@
     <head>
         <!--=============== basic  ===============-->
         <meta charset="UTF-8">
-        <title><%= @page_title || "Grabbing bits of videogame art" %> | Bitgrabbers</title>
+        <title><%= @page_title ? "#{@page_title} | Bitgrabbers" : "BitGrabbers: grabbing bits of videogame art" %> </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="robots" content="index, follow"/>
         <meta name="keywords" content="videogames screenshots"/>
