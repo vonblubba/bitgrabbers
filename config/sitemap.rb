@@ -28,7 +28,7 @@ SitemapGenerator::Sitemap.create do
   add about_path, :priority => 0.7, :changefreq => 'daily'
   add submit_path, :priority => 0.7, :changefreq => 'daily'
 
-  Screenshot.find_each do |screenshot|
+  Screenshot.published.find_each do |screenshot|
     add game_screenshot_path(game_id: screenshot.game, id: screenshot), :lastmod => screenshot.updated_at
   end
 
