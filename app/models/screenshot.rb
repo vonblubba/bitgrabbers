@@ -68,4 +68,8 @@ class Screenshot < ApplicationRecord
       }
     }
   end
+
+  def self.farthest_publication_date
+    Screenshot.order(publication_date: :desc).limit(1).take&.publication_date + 3.days
+  end
 end
