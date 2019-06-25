@@ -34,6 +34,7 @@ class Screenshot < ApplicationRecord
        }
 
   scope :published,   -> { where(published: true).where('screenshots.publication_date <= ?', DateTime.now) }
+  scope :unposted,    -> { where(posted: false).order(:publication_date) }
 
   before_save :update_aspect_ratio
 
