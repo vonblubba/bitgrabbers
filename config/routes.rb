@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'submit', to: 'pages#submit', as: 'submit'
   get 'search', to: 'pages#search', as: 'search'
   get 'robots', to: 'pages#robots', as: 'robots'
+  get 'rss', to: 'rss#index', as: 'rss_feed'
 
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
