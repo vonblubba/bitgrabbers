@@ -4,6 +4,7 @@ xml.rss :version => "2.0", "xmlns:atom" => "http://www.w3.org/2005/Atom" do
     xml.title "Bitgrabbers"
     xml.description "Videogame screenshots taken by videogame lovers. Because we strongly believe that videogames CAN be a form of art."
     xml.link root_url
+    xml.tag! 'atom:link', :rel => 'self', :type => 'application/rss+xml', :href => rss_feed_url(:format => :rss)
 
     @screenshots.each do |screenshot|
       xml.item do
