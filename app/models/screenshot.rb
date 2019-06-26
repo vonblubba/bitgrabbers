@@ -13,6 +13,8 @@
 #  updated_at       :datetime         not null
 #  image            :string
 #  slug             :string
+#  aspect_ratio     :integer          default("standard")
+#  posted           :boolean          default(FALSE)
 #
 
 class Screenshot < ApplicationRecord

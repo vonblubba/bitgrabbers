@@ -23,5 +23,8 @@ namespace :twitter do
 		text =  truncate(screenshot.description, length: availalbe_chars, separator: ' ')
 
 		client.update_with_media("#{text}\n\n#{url}\n\n#{hashtags}", File.open(Rails.root.join(screenshot.image.low_quality.path)))
+
+		screenshot.posted = true
+		screenshot.save
   end
 end

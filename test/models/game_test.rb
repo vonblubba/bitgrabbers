@@ -6,10 +6,10 @@
 #  description :text             not null
 #  name        :string           not null
 #  year        :integer
-#  order       :integer          default(10), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  slug        :string
+#  in_menu     :boolean          default(FALSE)
 #
 
 require 'test_helper'
