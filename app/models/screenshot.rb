@@ -36,7 +36,8 @@ class Screenshot < ApplicationRecord
        }
 
   scope :published,   -> { where(published: true).where('screenshots.publication_date <= ?', DateTime.now) }
-  scope :unposted,    -> { where(posted: false).order(:publication_date) }
+  scope :twitter_unposted,    -> { where(twitter_posted: false).order(:publication_date) }
+  scope :facebook_unposted,    -> { where(facebook_posted: false).order(:publication_date) }
 
   before_save :update_aspect_ratio
 

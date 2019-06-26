@@ -26,3 +26,7 @@ end
 every 1.day, :at => '1:00 am' do
   rake "-s twitter:post"
 end
+
+every 1.day, :at => '1:00 am' do
+  rake "-s facebook:post"
+end

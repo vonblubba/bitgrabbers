@@ -13,18 +13,18 @@ namespace :twitter do
 		  config.access_token_secret = Rails.application.credentials.twitter[:access_token_secret]
 		end
 
-		screenshot = Screenshot.unposted.limit(1).take
+		screenshot = Screenshot.twitter_unposted.limit(1).take
 
 		hashtags = "#screenshot #videogames #gaming ##{screenshot.game.slug.sub('-', '')}"
 		url = game_screenshot_url(game_id: screenshot.game, id: screenshot, :host => Rails.configuration.global_settings['base_url'])
 
-		availalbe_chars = 275 - (hashtags.length + url.length)
+		availalbe_chars = 270 - (hashtags.length + url.length)
 
 		text =  truncate(screenshot.description, length: availalbe_chars, separator: ' ')
 
 		client.update_with_media("#{text}\n\n#{url}\n\n#{hashtags}", File.open(Rails.root.join(screenshot.image.low_quality.path)))
 
-		screenshot.posted = true
+		screenshot.twitter_posted = true
 		screenshot.save
   end
 end
