@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   resources :tags, only: [:show]
   resources :submissions, only: [:create]
+
+  get '*path' => redirect('/') # redirect routes noft foind to root
 end
