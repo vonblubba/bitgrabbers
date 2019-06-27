@@ -15,7 +15,7 @@ namespace :twitter do
 
 		screenshot = Screenshot.twitter_unposted.limit(1).take
 
-		hashtags = "#screenshot #videogames #gaming ##{screenshot.game.slug.sub('-', '')}"
+		hashtags = "#bitgrabbers #screenshot #videogames #gaming ##{screenshot.game.slug.sub('-', '')}"
 		url = game_screenshot_url(game_id: screenshot.game, id: screenshot, :host => Rails.configuration.global_settings['base_url'])
 
 		availalbe_chars = 270 - (hashtags.length + url.length)

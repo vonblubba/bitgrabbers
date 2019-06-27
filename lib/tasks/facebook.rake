@@ -12,7 +12,7 @@ namespace :facebook do
     @page_graph = Koala::Facebook::API.new(page_token)
 
     screenshot = Screenshot.facebook_unposted.limit(1).take
-    hashtags = "#screenshot #videogames #gaming ##{screenshot.game.slug.sub('-', '')}"
+    hashtags = "#bitgrabbers #screenshot #videogames #gaming ##{screenshot.game.slug.sub('-', '')}"
     url = game_screenshot_url(game_id: screenshot.game, id: screenshot, :host => Rails.configuration.global_settings['base_url'])
     text =  screenshot.description
     message = "#{text}\n\nHigh quality image here:\n#{url}\n\n#{hashtags}"
