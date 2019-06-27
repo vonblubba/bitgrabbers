@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.friendly.find(params[:id])
-    @page_title = @game.name
+    @page_title = "screenshots for #{@game.name} | Bitgrabbers"
     @screenshots = @game.screenshots.published.order("created_at DESC")
   end
 end

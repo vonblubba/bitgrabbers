@@ -4,13 +4,13 @@ class PagesController < ApplicationController
   end
 
   def about
-    @page_title = 'About us'
+    @page_title = 'About us | Bitgrabbers'
     @screenshots_count = Screenshot.published.count
     @games_count = Game.all.count
   end
 
   def submit
-    @page_title = 'Submit your shots'
+    @page_title = "Submit your best screenshots | Bitgrabbers"
   end
 
   def search
