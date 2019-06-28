@@ -36,6 +36,7 @@ class Screenshot < ApplicationRecord
        }
 
   scope :published,   -> { where(published: true).where('screenshots.publication_date <= ?', DateTime.now) }
+  scope :unpublished,   -> { where(published: false).or(Screenshot.where('screenshots.publication_date > ?', DateTime.now)) }
   scope :twitter_unposted,    -> { where(twitter_posted: false).order(:publication_date) }
   scope :facebook_unposted,    -> { where(facebook_posted: false).order(:publication_date) }
 

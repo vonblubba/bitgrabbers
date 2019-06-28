@@ -20,3 +20,20 @@ $am-theme-primary: #342e48;
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+div.panel-content {
+  padding: 15px 15px 15px 15px;
+}
+
+div.admin-column {
+  //display: inline;
+  margin: 15px;
+}
+
+div.admin-columns {
+  padding: 15px;
+}
+
+//.admin-panel {
+//  margin-bottom: 15px;
+//}
