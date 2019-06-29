@@ -14,7 +14,8 @@
 #  image            :string
 #  slug             :string
 #  aspect_ratio     :integer          default("standard")
-#  posted           :boolean          default(FALSE)
+#  twitter_posted   :boolean          default(FALSE)
+#  facebook_posted  :boolean          default(FALSE)
 #
 
 require 'test_helper'
