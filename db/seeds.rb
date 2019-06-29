@@ -20,7 +20,7 @@ end
     description: Faker::ChuckNorris.fact,
     name: Faker::Book.unique.title,
     year: 2018,
-    order: i
+    in_menu: true
   )
 end
 
