@@ -1,5 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
+  	redirect_to root_path unless request.env["omniauth.auth"]["info"]["email"] == "oscar.riva@gmail.com"
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
