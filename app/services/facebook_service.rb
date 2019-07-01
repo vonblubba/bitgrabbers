@@ -1,7 +1,3 @@
-include ActionView::Helpers::TextHelper
-include Rails.application.routes.url_helpers
-Rails.application.routes.default_url_options[:host] = Rails.configuration.global_settings['base_url']
-
 class FacebookService
   def self.post(screenshot_id)
     @oauth = Koala::Facebook::OAuth.new(Rails.application.credentials.facebook[:app_id], Rails.application.credentials.facebook[:app_secret])
@@ -15,7 +11,7 @@ class FacebookService
 
     screenshot = Screenshot.find(screenshot_id)
     hashtags = "#bitgrabbers #screenshot #videogames #gaming #gamer #game ##{screenshot.game.slug.sub('-', '')}"
-    url = game_screenshot_url(game_id: screenshot.game, id: screenshot, :host => Rails.configuration.global_settings['base_url'])
+    url = "#{Rails.configuration.global_settings['base_url']}/games/#{screenshot.game.slug}/screenshots/#{screenshot.slug}"
     text =  screenshot.description
     message = "#{text}\n\nHigh quality image here:\n#{url}\n\n#{hashtags}"
     File.open(screenshot.image.low_quality.path) do |file|
