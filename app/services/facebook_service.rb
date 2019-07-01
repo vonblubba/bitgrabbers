@@ -1,6 +1,5 @@
 include ActionView::Helpers::TextHelper
 include Rails.application.routes.url_helpers
-Rails.application.routes.default_url_options[:host] = Rails.configuration.global_settings['base_url']
 
 class FacebookService
   def self.post(screenshot_id)
