@@ -26,6 +26,7 @@ ActiveAdmin.register Screenshot do
       f.input :game
       f.input :title
       f.input :description
+      f.input :facebook_posted, :label => "Post update on Bitgrabbers facebook page"
       f.input :tag_list, as: :tags, collection: ActsAsTaggableOn::Tag.all.pluck(:name)
       f.input :publication_date, as: :date_time_picker
       f.input :published

@@ -42,6 +42,7 @@ class Screenshot < ApplicationRecord
   scope :facebook_unposted,    -> { where(facebook_posted: false).order(:publication_date) }
 
   before_save :update_aspect_ratio
+  after_commit :post_to_facebook
 
   def thumb
     image.thumb.url
@@ -73,6 +74,10 @@ class Screenshot < ApplicationRecord
         "applicationCategory": "Game"
       }
     }
+  end
+
+  def post_to_facebook
+    ::FacebookService.post(self.id)
   end
 
   def self.farthest_publication_date
