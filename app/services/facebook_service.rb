@@ -1,7 +1,7 @@
-include ActionView::Helpers::TextHelper
-include Rails.application.routes.url_helpers
-
 class FacebookService
+  include ActionView::Helpers::TextHelper
+  include Rails.application.routes.url_helpers
+
   def self.post(screenshot_id)
     @oauth = Koala::Facebook::OAuth.new(Rails.application.credentials.facebook[:app_id], Rails.application.credentials.facebook[:app_secret])
     app_token = @oauth.get_app_access_token
