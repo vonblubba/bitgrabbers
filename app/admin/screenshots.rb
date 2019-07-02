@@ -31,7 +31,7 @@ ActiveAdmin.register Screenshot do
       f.input :publication_date, as: :date_time_picker
       f.input :published
       f.input :image, :as => :file
-      f.input :user_id, as: :select, collection: user_collection
+      f.input :user_id, as: :select, collection: user_collection, as: :hidden
     end
     f.actions
   end
