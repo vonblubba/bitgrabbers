@@ -2,7 +2,7 @@ class FacebookService
   def self.post(screenshot_id)
     @oauth = Koala::Facebook::OAuth.new(Rails.application.credentials.facebook[:app_id], Rails.application.credentials.facebook[:app_secret])
     app_token = @oauth.get_app_access_token
-    user_token = User.find_by_email("oscar.riva@gmail.com").token
+    user_token = User.find_by_email("eaoveyabhp_1561787114@tfbnw.net").token
 
     @user_graph = Koala::Facebook::API.new(user_token)
     page_id = Rails.application.credentials.facebook[:page_id]
