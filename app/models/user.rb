@@ -27,8 +27,8 @@ class User < ApplicationRecord
     user.provider = auth.provider
     user.token = auth.credentials.token
     user.save
-    user
     user.password = Devise.friendly_token[0, 20]
+    user
     # If you are using confirmable and the provider(s) you use validate emails,
     # uncomment the line below to skip the confirmation emails.
     # user.skip_confirmation!
