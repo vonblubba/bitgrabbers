@@ -29,7 +29,7 @@
         <!--=============== JSON LD ===============-->
         <% if @screenshot %>
         <script type="application/ld+json">
-            <%= raw @screenshot.json_ld %>
+            <%= raw @screenshot.json_ld.to_json %>
         </script>
         <% end %>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
