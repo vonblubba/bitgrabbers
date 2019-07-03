@@ -26,7 +26,7 @@ ActiveAdmin.register Screenshot do
       f.input :game
       f.input :title
       f.input :description
-      f.input :facebook_posted, :label => "Post update on Bitgrabbers facebook page"
+      #f.input :facebook_posted, :label => "Post update on Bitgrabbers facebook page"
       f.input :tag_list, as: :tags, collection: ActsAsTaggableOn::Tag.all.pluck(:name)
       f.input :publication_date, as: :date_time_picker
       f.input :published
@@ -34,6 +34,14 @@ ActiveAdmin.register Screenshot do
       f.input :user_id, as: :select, collection: user_collection, as: :hidden
     end
     f.actions
+  end
+
+  controller do
+    def delete
+      super do |success,failure|
+        success.html { redirect_to collection_path }
+      end
+    end
   end
 
 end

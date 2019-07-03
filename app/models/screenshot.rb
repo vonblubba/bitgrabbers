@@ -43,7 +43,7 @@ class Screenshot < ApplicationRecord
   scope :facebook_unposted,    -> { where(facebook_posted: false).order(:publication_date) }
 
   before_save :update_aspect_ratio
-  after_commit :post_to_facebook
+  #after_commit :post_to_facebook
 
   def thumb
     image.thumb.url
