@@ -4,16 +4,19 @@ class PagesController < ApplicationController
   end
 
   def about
+    @meta_description = "About the bitgrabbers. We are gamers, our mission is to preserve the best gaming moments."
     @page_title = 'About us | Bitgrabbers'
     @screenshots_count = Screenshot.published.count
     @games_count = Game.all.count
   end
 
   def submit
+    @meta_description = "Sendo your best shots to Bitgrabbers. They may be featured on the website."
     @page_title = "Submit your best screenshots | Bitgrabbers"
   end
 
   def search
+    @meta_description = "Screenshot serach result"
     @q = Screenshot.ransack(params[:q])
     @screenshots = @q.result(distinct: true)
   end
