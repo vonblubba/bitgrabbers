@@ -26,8 +26,21 @@
 
           gtag('config', '<%= Rails.configuration.global_settings['google_tracking_id'] %>');
         </script>
-        <!--=============== JSON LD ===============-->
+        <!--=============== JSON LD & social meta ===============-->
         <% if @screenshot %>
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="<%= Rails.configuration.global_settings['base_url'] + @screenshot.image.big_thumb.url %>">
+        <meta property="og:title" content="<%= @screenshot.title %>">
+        <meta property="og:description" content="<%= @screenshot.description  %>">
+        <meta property="og:site_name" content="Bitgrabbers">
+        <meta property="og:url" content="<%= game_screenshot_path(game_id: @screenshot.game, id: @screenshot) %>">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:image" content="<%= Rails.configuration.global_settings['base_url'] + @screenshot.image.big_thumb.url %>">
+        <meta name="twitter:title" content="<%= @screenshot.title %>">
+        <meta name="twitter:description" content="<%= @screenshot.description  %>">
+        <meta name="twitter:site" content="<%= Rails.configuration.global_settings['base_url'] %>">
+
         <script type="application/ld+json">
             <%= raw @screenshot.json_ld.to_json %>
         </script>
