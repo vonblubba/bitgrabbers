@@ -26,7 +26,7 @@ class User < ApplicationRecord
 	  user.email = auth.extra.raw_info.email
     user.provider = auth.provider
     user.token = auth.credentials.token
-    user.password = Devise.friendly_token[0, 20]
+    user.password = Devise.friendly_token[0, 20] unless user.password
     user.save
     user
     # If you are using confirmable and the provider(s) you use validate emails,
