@@ -36,19 +36,28 @@ class ScreenshotUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process resize_to_fit: [80, 50]
-    process :quality => 60
+    process :quality => 85
+    process :strip
+    process :gaussian_blur => 0.05
+    process :interlace => "plane"
   end
 
   version :big_thumb do
     # resize and crop to 400x265
     process resize_to_fit: [nil, 265]
     process center_crop: ['400']
-    process :quality => 65
+    process :quality => 85
+    process :strip
+    process :gaussian_blur => 0.05
+    process :interlace => "plane"
   end
 
   version :low_quality do
     process resize_to_fit: [1200, nil]
     process :quality => 85
+    process :strip
+    process :gaussian_blur => 0.05
+    process :interlace => "plane"
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
