@@ -10,7 +10,11 @@ xml.rss :version => "2.0", "xmlns:atom" => "http://www.w3.org/2005/Atom" do
       xml.item do
         xml.title screenshot.title
         xml.description screenshot.description
-        xml.image "#{Rails.configuration.global_settings['base_url']}#{screenshot.image.big_thumb.url}"
+        xml.image do |i|
+          i.url "#{Rails.configuration.global_settings['base_url']}#{screenshot.image.big_thumb.url}"
+          i.title screenshot.title
+          i.link game_screenshot_url(game_id: screenshot.game, id: screenshot)
+        end
         xml.pubDate screenshot.publication_date.to_s(:rfc822)
         xml.link game_screenshot_url(game_id: screenshot.game, id: screenshot)
         xml.guid game_screenshot_url(game_id: screenshot.game, id: screenshot)
