@@ -19,7 +19,7 @@ ActiveAdmin.register Screenshot do
   filter :game_id
 
   form(:html => { :multipart => true }) do |f|
-    f.object.publication_date = Screenshot.farthest_publication_date
+    f.object.publication_date ||= Screenshot.farthest_publication_date
     f.object.user = current_user
     f.inputs do
       user_collection = User.all.map { |user| ["#{user.email}", user.id ]}
