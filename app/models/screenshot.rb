@@ -82,6 +82,7 @@ class Screenshot < ApplicationRecord
   end
 
   def self.farthest_publication_date
+    return Date.now + 3.days unless Screenshot.any
     Screenshot.order(publication_date: :desc).limit(1).take&.publication_date + 3.days
   end
 end
